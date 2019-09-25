@@ -11,18 +11,18 @@ The reason for not using the latest version is because the libraries went throug
 
 ## Using the docker image
 
-> #### **First pull out the image from doker hub**
+#### **First pull out the image from doker hub**
 
 $ `docker pull shashankshark/zeromq-dev`
 
-> #### **Verify the pull**
+#### **Verify the pull**
 
 $ `sudo docker images`
 
-> #### **Run the container**
+#### **Run the container**
 $ `sudo docker run -d -P --name test_zmq shashankshark/zeromq-dev`
 
-> #### **Find the port number on which container is communicating for ssh**
+#### **Find the port number on which container is communicating for ssh**
 
 $ `sudo docker port test_zmq 22`
 
@@ -30,7 +30,7 @@ You can expect your output would be something like `0.0.0.0:49154`
 
 Here `49154` is the port number that we need. Note that it may be different on your system.
 
-> #### **Now ssh into the container**
+#### **Now ssh into the container**
 
 You can either ssh from terminal like
 
@@ -43,11 +43,11 @@ You can use vscode's remote-explorer package to connect. I prefer this way becau
 You can refer to this link for setting up the environment (just installing a package).
 https://medium.com/@agavatar/working-with-docker-in-visual-studio-code-756ea8b32abc
 
-> #### **Set your LOCALE**
+#### **Set your LOCALE**
 
 $ `export LC_ALL=C`
 
-> #### **Now let's test by compiling a piece of zmq code**
+#### **Now let's test by compiling a piece of zmq code**
 
 Copy the below program to `wuclient.c`
 
@@ -131,7 +131,7 @@ int main (void)
 }
 ```
 
-> #### **Now compile and run the program**
+#### **Now compile and run the program**
 
 $ `gcc wuclient.c -lczmq -lzmq -o weather-client`
 
@@ -148,4 +148,4 @@ If you need an image with pre-installed and pre-configured ZeroMQ libraries, you
 
 The following are the updates and versions of the libraries that are installed in the image.
 
-> ## IMAGE UPDATE
+## IMAGE UPDATE
